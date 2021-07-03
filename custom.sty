@@ -1,0 +1,103 @@
+% Comandos
+\ProvidesPackage{custom}
+\RequirePackage{xparse}
+
+\newcommand{\R} {\mathbb{R}} % Números Reales
+\newcommand{\C} {\mathbb{C}} % Números Complejos
+\newcommand{\N} {\mathbb{N}} % Números Naturales
+\newcommand{\Q} {\mathbb{Q}} % Números Racional
+\newcommand{\grad} {\nabla} % Gradiente
+\newcommand{\1} {\mathbbm{1}} % Función uno
+\newcommand{\Rinfty} {\mathbb{R} \cup \{ \infty \}} % Números Reales extendidos superiormente
+\newcommand{\Rext} {\overline{\mathbb{R}}} % Números Reales extendidos
+\renewcommand{\d} {\text{d}} % Derivada
+\newcommand{\M} {\mathcal{M}} % Conjuntos Medibles
+\newcommand{\A} {\mathcal{A}} % Álgebra
+\renewcommand{\L} {\mathcal{L}} % Conjunto de lineales continuas
+\newcommand{\CONT} {\mathcal{C}} % Conjunto de continuas
+\newcommand{\Lp}[1][\infty] {L^{#1}} % Espacio L^p
+\renewcommand{\H} {\mathcal{H}} % Hiperplano
+
+\newcommand{\E}[3][] {#1\left( #2 , #3 \right)} % Espacios 2
+\newcommand{\EIII}[4][] {#1\left( #2 , #3 , #4 \right)} % Espacios 3
+
+\newcommand{\F}[3] {#1: #2 \rightarrow #3} % Definición de función
+\newcommand{\f}[2] {#1\left( #2 \right)} % Evaluación de función
+\newcommand{\SUC}[3][\mathbb{N}] {\left\lbrace #2_{#3} \right\rbrace_{#3 \in #1}} % Definir sucesión
+\newcommand{\SUBSUC}[4][\mathbb{N}] {\left\lbrace #2_{#3_{#4}} \right\rbrace_{#4 \in #1}} % Definir subsucesión
+\newcommand{\df}[2][0] {#2^{\left( #1 \right)}} % Función derivada #1 veces
+\newcommand{\fracd}[2] {\frac{\text{d} #1}{\text{d} #2}} % Derivada de #2 respecto a #1
+\NewDocumentCommand{\INT}{O{}O{}mm} {\int_{#1}^{#2} #3 \text{d} #4} % Integral
+\newcommand{\SUM}[3] {\sum_{#1 = #2}^{#3}}
+\newcommand{\PROD}[3] {\sum_{#1 = #2}^{#3}}
+
+\newcommand{\pare}[1] {\left( #1 \right)} % Paréntesis
+\newcommand{\llave}[1] {\left\lbrace #1 \right\rbrace} % Llaves curvas
+\newcommand{\cuadro}[1] {\left[ #1 \right]} % Llaves cuadradas
+\NewDocumentCommand{\interval}{O{[}O{]}mm} {\left#1 #3, #4 \right#2} % Intervalo
+
+\newcommand{\preimagen}[3][>] {\left\lbrace #2 #1 #3 \right\rbrace} % Preimagen de un conjunto
+
+\newcommand{\interno}[3][] {\left\langle #2 , #3 \right\rangle_{#1}} % Producto Interno
+\newcommand{\norma}[2][] {\left\Vert #2 \right\Vert_{#1}} % Norma
+\newcommand{\abs}[1] {\left\vert #1 \right\vert} % Absoluto
+
+\newcommand{\oo} {\ \vee\ } % ó
+\newcommand{\yy} {\ \wedge\ }
+\newcommand{\paratodo} {\forall\ } % y
+\newcommand{\ds} {\displaystyle} % Displaystyle
+\newcommand{\ssi}[1][] {\overset{#1}{\ \Leftrightarrow\ }} % Si y solo si
+\newcommand{\implica}[1][] {\overset{#1}{\ \Rightarrow\ }} % Implicancia
+\renewcommand{\t}[1][] {\overset{#1}{\rightarrow}} % Tiende a
+\newcommand{\tdebil}[1][] {\overset{#1}{\rightharpoonup}} % Tiende débil
+\newcommand{\uu} {\cup} % Union
+\newcommand{\ii} {\cap} % Intersección
+\newcommand{\UU} {\bigcup} % Union (indexada)
+\newcommand{\II} {\bigcap} % Intersección (indexada)
+\newcommand{\Ui}[3] {\bigcup_{#1 = #2}^{#3}} % Union (numerable indexada)
+\newcommand{\Ii}[3] {\bigcap_{#1 = #2}^{#3}} % Intersección (numerable indexada)
+\newcommand{\e} {\varepsilon} % Epsilon
+\newcommand{\ol}[1] {\overline{ #1 }} % Cerradura
+\newcommand{\val}[1] {\text{val} \left( #1 \right)} % val
+\newcommand{\sol}[1] {\text{sol} \left( #1 \right)} % sol
+
+\newcommand{\talque} {\text{ tal que }} % Tal que
+\newcommand{\si} {\text{ si }} % Si
+
+\newenvironment{funcionporpartes}[1]{
+    \left\{
+    \begin{array}{#1}
+        }
+        {
+    \end{array}
+    \right.
+    }
+
+\newenvironment{matriz}[1]{
+    \left(
+    \begin{array}{#1}
+        }
+        {
+    \end{array}
+    \right)
+    }
+    
+\newenvironment{enunciado}{
+    \begin{mdframed}[roundcorner=10pt]
+        }
+        {
+     \end{mdframed}
+    }
+    
+\newenvironment{demostracion}{
+    \textsc{Solución.}}{}
+    
+\newlength{\myl}
+\newenvironment{seccion}[1]{
+    \settowidth{\myl}{( #1 )\ \ }
+    \begin{hangparas}{\the\myl}{1}
+        ( #1 )
+        }
+        {
+    \end{hangparas}
+    }
